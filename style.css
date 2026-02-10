@@ -407,3 +407,124 @@ footer {
     .time-badge { position: relative; left: 0; display: inline-block; margin-bottom: 1rem; }
     .benefits-grid { grid-template-columns: 1fr; }
 }
+
+/* Quotation Section */
+.quotation-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    border: 1px solid var(--accent-gold);
+    box-shadow: 0 0 50px rgba(251, 191, 36, 0.05);
+}
+
+.quotation-card .strategy-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 2rem;
+}
+
+.quotation-card .strategy-header h3 {
+    color: var(--accent-gold);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.quotation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.quotation-table th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.quotation-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    vertical-align: top;
+}
+
+.quotation-table .sub-text {
+    font-size: 0.8rem;
+    color: #64748b;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+.quotation-table .price-col {
+    text-align: right;
+    width: 150px;
+}
+
+.quotation-table .price {
+    text-align: right;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    color: #e2e8f0;
+    font-size: 1.2rem;
+}
+
+.quotation-table tfoot td {
+    border-top: 2px solid var(--accent-gold);
+    border-bottom: none;
+    padding-top: 2rem;
+}
+
+.quotation-table .total-label {
+    text-align: right;
+    font-size: 1.2rem;
+    padding-right: 2rem;
+    color: var(--accent-gold);
+}
+
+.quotation-table .total-price {
+    text-align: right;
+    font-size: 2rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+.notes {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.notes p {
+    color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.notes ul {
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.notes li::before {
+    content: '►';
+    color: var(--accent-gold);
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .quotation-card { padding: 1.5rem; }
+    .quotation-table th { display: none; }
+    .quotation-table td { display: block; padding: 0.5rem 0; border: none; }
+    .quotation-table tr { display: block; margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; }
+    .quotation-table .price { text-align: left; color: var(--accent-gold); margin-top: 0.5rem; }
+    .quotation-table .total-label { text-align: left; padding-right: 0; }
+    .quotation-table .total-price { text-align: left; font-size: 1.5rem; }
+}
