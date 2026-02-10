@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元成機械 - 製作團隊溝通版 | Production Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Production Page Specific Overrides */
+        .production-tag {
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .container.wide {
+            max-width: 1400px;
+        }
+
+        .script-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .script-row {
+            display: grid;
+            grid-template-columns: 250px 1fr 400px;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            align-items: start;
+        }
+
+        .script-row:hover {
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .col-tech {
+            font-family: 'Outfit', sans-serif;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .col-tech .time {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .tech-spec {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            border-left: 2px solid #334155;
+        }
+
+        .tech-spec strong {
+            color: #e2e8f0;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .col-content h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .col-content ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .col-content li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .col-content li::before {
+            content: '🎥';
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .col-ref {
+            position: relative;
+        }
+
+        .ref-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: transform 0.3s;
+        }
+
+        .ref-image:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-gold);
+        }
+
+        .ref-caption {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        /* Notes Section */
+        .prod-notes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .note-card {
+            background: #0f172a;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
+
+        @media (max-width: 1024px) {
+            .script-row {
+                grid-template-columns: 1fr;
+            }
+            .ref-image {
+                height: auto;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <header class="hero" style="height: 60vh; min-height: 500px;">
+        <div class="container">
+            <span class="production-tag">INTERNAL USE ONLY</span>
+            <h1 class="animate-text">製作團隊溝通版<br><span class="highlight">Production Guide</span></h1>
+            <p class="subtitle animate-text delay-1">元成機械企業形象影片專案</p>
+            <p class="project-info animate-text delay-2">Technical Breakdown & Visual References</p>
+            <a href="#production-script" class="btn animate-text delay-3">查看分鏡細節</a>
+        </div>
+    </header>
+
+    <section id="notes" class="section light-bg">
+        <div class="container wide">
+            <h2 class="section-title">製作備忘錄 <span class="en-title">Production Notes</span></h2>
+            <div class="prod-notes">
+                <div class="note-card">
+                    <h3>🎨 Tone & Manner</h3>
+                    <p style="color: #cbd5e1; margin-top: 1rem;">
+                        <strong>關鍵字：</strong>科技感、精準、信賴、深邃。<br><br>
+                        畫面色調以冷藍 (#0f172a) 為基底，金屬銀灰呈現機械質感，輔以品牌金 (#fbbf24) 作為視覺亮點。避免過度飽和的暖色，保持專業冷靜的工業美學。
+                    </p>
+                </div>
+                <div class="note-card">
+                    <h3>🎥 攝影運鏡 (Camera Movement)</h3>
+                    <p style="color: #cbd5e1; margin-top: 1rem;">
+                        <strong>穩定器 (Gimbal)：</strong>模擬滑軌的緩慢推拉 (Dolly In/Out)，強調機械的結構感。<br><br>
+                        <strong>微距 (Macro)：</strong>使用 100mm 微距鏡頭捕捉藥錠壓製、雷射打孔的瞬間細節。<br><br>
+                        <strong>空拍 (Drone)：</strong>華亞園區外觀需在晨昏時刻拍攝，避開頂光。
+                    </p>
+                </div>
+                <div class="note-card">
+                    <h3>💡 燈光設計 (Lighting)</h3>
+                    <p style="color: #cbd5e1; margin-top: 1rem;">
+                        <strong>High Contrast：</strong>強調金屬反光與輪廓光 (Rim Light)。<br><br>
+                        <strong>氛圍光：</strong>部分大型機台可加設藍色 LED 燈管營造科技氛圍，背景盡量壓暗，突出主體。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="production-script" class="section dark-bg">
+        <div class="container wide">
+            <h2 class="section-title">分鏡腳本與參考圖 <span class="en-title">Script & References</span></h2>
+            
+            <div class="script-grid">
+                <!-- Scene 1 -->
+                <div class="script-row">
+                    <div class="col-tech">
+                        <span class="time">0:00 - 0:30</span>
+                        <div class="tech-spec">
+                            <strong>鏡頭 Lens</strong>
+                            24mm Wide / Drone
+                        </div>
+                        <div class="tech-spec">
+                            <strong>運鏡 Movement</strong>
+                            Fly Over / Dolly Forward
+                        </div>
+                        <div class="tech-spec">
+                            <strong>備註 Note</strong>
+                            需確認廠區外觀整潔，移除雜物
+                        </div>
+                    </div>
+                    <div class="col-content">
+                        <h3>第一章：品牌底蘊 (Opening)</h3>
+                        <ul>
+                            <li><strong>空拍大景：</strong>華亞科技園區元成總部外觀，晨光或黃昏質感。</li>
+                            <li><strong>歷史疊加：</strong>黑白老照片(創辦人) 3D Parallax 效果轉場至現代彩色廠房。</li>
+                            <li><strong>辦公室特寫：</strong>研發人員專注神情，背景虛化，強調「人」的溫度。</li>
+                        </ul>
+                        <div class="key-text" style="background:rgba(251, 191, 36, 0.1); padding:1rem; border-radius:8px;">
+                            <h4 style="color:#fbbf24; margin-top:0;">字幕 Key Text</h4>
+                            <p style="margin:0; font-family:'Outfit';">YENCHEN MACHINERY Since 1967<br>60 Years of Expertise</p>
+                        </div>
+                    </div>
+                    <div class="col-ref">
+                        <img src="https://placehold.co/600x400/1e293b/fbbf24?text=Drone+Shot:+HQ+Building+Sunrise" alt="HQ Ref" class="ref-image">
+                        <p class="ref-caption">參考：晨光下的科技園區建築，強調線條與光影。</p>
+                        <div style="margin-top:10px;">
+                            <img src="https://placehold.co/600x400/1e293b/fbbf24?text=Old+Photo+Parallax+Effect" alt="History Ref" class="ref-image" style="height: 150px;">
+                            <p class="ref-caption">參考：歷史照片轉場效果</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scene 2 -->
+                <div class="script-row">
+                    <div class="col-tech">
+                        <span class="time">0:30 - 2:00</span>
+                        <div class="tech-spec">
+                            <strong>鏡頭 Lens</strong>
+                            100mm Macro / 50mm
+                        </div>
+                        <div class="tech-spec">
+                            <strong>運鏡 Movement</strong>
+                            Slow Pan / Rack Focus
+                        </div>
+                        <div class="tech-spec">
+                            <strong>FPS</strong>
+                            60fps (慢動作呈現機械細節)
+                        </div>
+                    </div>
+                    <div class="col-content">
+                        <h3>第二章：核心技術 (Core Tech)</h3>
+                        <ul>
+                            <li><strong>造粒線/乾燥機：</strong>粉末飛揚的慢動作特寫 (需打背光強調粒子感)。</li>
+                            <li><strong>雷射打孔機：</strong>捕捉雷射光束打在藥錠上的瞬間 (Macro 特寫)。</li>
+                            <li><strong>萃取濃縮：</strong>大型不鏽鋼槽體的金屬質感，強調拋光與焊接工藝。</li>
+                            <li><strong>針劑產線：</strong>玻璃瓶在輸送帶上的規律運動，機械臂的精準夾取。</li>
+                        </ul>
+                        <div class="key-text" style="background:rgba(251, 191, 36, 0.1); padding:1rem; border-radius:8px;">
+                            <h4 style="color:#fbbf24; margin-top:0;">字幕 Key Text</h4>
+                            <p style="margin:0; font-family:'Outfit';">Total Solution Provider<br>Key Tech: Laser Drilling</p>
+                        </div>
+                    </div>
+                    <div class="col-ref">
+                        <img src="https://placehold.co/600x400/0f172a/38bdf8?text=Macro:+Pill+Manufacturing" alt="Macro Ref" class="ref-image">
+                        <p class="ref-caption">參考：藥錠生產特寫，強調潔淨度與精密度。</p>
+                        <div style="margin-top:10px; display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                            <img src="https://placehold.co/300x200/0f172a/38bdf8?text=Laser+Beam" class="ref-image" style="height:120px;">
+                            <img src="https://placehold.co/300x200/0f172a/38bdf8?text=Steel+Tank" class="ref-image" style="height:120px;">
+                        </div>
+                        <p class="ref-caption">參考：雷射光束質感 / 不鏽鋼桶槽光澤</p>
+                    </div>
+                </div>
+
+                <!-- Scene 3 -->
+                <div class="script-row">
+                    <div class="col-tech">
+                        <span class="time">2:00 - 2:30</span>
+                        <div class="tech-spec">
+                            <strong>素材 Asset</strong>
+                            3D Earth Animation
+                        </div>
+                        <div class="tech-spec">
+                            <strong>風格 Style</strong>
+                            Hologram / Tech Blue
+                        </div>
+                    </div>
+                    <div class="col-content">
+                        <h3>第三章：全球佈局 (Global Reach)</h3>
+                        <ul>
+                            <li><strong>地球儀動畫：</strong>以台灣為中心，發射光束連接全球 70+ 國家。</li>
+                            <li><strong>Logo Wall：</strong>知名藥廠 Logo (Pfizer, Takeda 等) 以浮雕或全息投影方式呈現，避免平面貼圖感。</li>
+                        </ul>
+                        <div class="key-text" style="background:rgba(251, 191, 36, 0.1); padding:1rem; border-radius:8px;">
+                            <h4 style="color:#fbbf24; margin-top:0;">字幕 Key Text</h4>
+                            <p style="margin:0; font-family:'Outfit';">Global Reach: 70+ Countries<br>Trusted by World-Class Partners</p>
+                        </div>
+                    </div>
+                    <div class="col-ref">
+                        <img src="https://placehold.co/600x400/000000/38bdf8?text=Hologram+Earth+Network" alt="Global Ref" class="ref-image">
+                        <p class="ref-caption">參考：深色背景的科技感地球儀，連結線條需清晰。</p>
+                    </div>
+                </div>
+
+                <!-- Scene 4 -->
+                <div class="script-row">
+                    <div class="col-tech">
+                        <span class="time">2:30 - 3:10</span>
+                        <div class="tech-spec">
+                            <strong>鏡頭 Lens</strong>
+                            35mm / 50mm
+                        </div>
+                        <div class="tech-spec">
+                            <strong>燈光 Light</strong>
+                            Soft, Clean White
+                        </div>
+                    </div>
+                    <div class="col-content">
+                        <h3>第四章：品質與 ESG (Quality & ESG)</h3>
+                        <ul>
+                            <li><strong>文件特寫：</strong>翻閱 DQ/IQ/OQ 文件、ISO 證書的手部特寫 (淺景深)。</li>
+                            <li><strong>FAT 測試：</strong>工程師拿著平板檢查設備，展現專業與現代化流程。</li>
+                            <li><strong>永續意象：</strong>綠色植栽與乾淨廠房的結合，太陽能板 (若有) 或綠能標章特寫。</li>
+                        </ul>
+                        <div class="key-text" style="background:rgba(251, 191, 36, 0.1); padding:1rem; border-radius:8px;">
+                            <h4 style="color:#fbbf24; margin-top:0;">字幕 Key Text</h4>
+                            <p style="margin:0; font-family:'Outfit';">PIC/S GMP & FDA Compliant<br>Target: Net Zero 2050</p>
+                        </div>
+                    </div>
+                    <div class="col-ref">
+                        <img src="https://placehold.co/600x400/ffffff/10b981?text=Clean+Room+Engineer" alt="ESG Ref" class="ref-image">
+                        <p class="ref-caption">參考：穿著無塵衣或實驗袍的工程師，明亮潔淨的光線。</p>
+                    </div>
+                </div>
+
+                <!-- Scene 5 -->
+                <div class="script-row">
+                    <div class="col-tech">
+                        <span class="time">3:10 - 3:30</span>
+                        <div class="tech-spec">
+                            <strong>鏡頭 Lens</strong>
+                            24mm Group Shot
+                        </div>
+                        <div class="tech-spec">
+                            <strong>氛圍 Mood</strong>
+                            Warm, Confident
+                        </div>
+                    </div>
+                    <div class="col-content">
+                        <h3>第五章：團隊願景 (Vision)</h3>
+                        <ul>
+                            <li><strong>團隊合照：</strong>元成管理層與工程師在 Logo 牆前的自信合影 (微笑、握拳)。</li>
+                            <li><strong>快速剪輯：</strong>回顧前面精彩畫面 (Montage)。</li>
+                            <li><strong>結尾：</strong>Logo 動畫與 Slogan 定格。</li>
+                        </ul>
+                        <div class="key-text" style="background:rgba(251, 191, 36, 0.1); padding:1rem; border-radius:8px;">
+                            <h4 style="color:#fbbf24; margin-top:0;">字幕 Key Text</h4>
+                            <p style="margin:0; font-family:'Outfit';">Your Satisfaction, We Care<br>www.yenchen.com.tw</p>
+                        </div>
+                    </div>
+                    <div class="col-ref">
+                        <img src="https://placehold.co/600x400/1e293b/fbbf24?text=Confident+Corporate+Team" alt="Team Ref" class="ref-image">
+                        <p class="ref-caption">參考：展現專業自信的團隊合照，燈光需立體。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 元成機械企業形象影片專案 - 內部製作溝通文件 | Confidential</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
