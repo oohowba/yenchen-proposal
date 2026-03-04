@@ -528,3 +528,8 @@ footer {
     .quotation-table .total-label { text-align: left; padding-right: 0; }
     .quotation-table .total-price { text-align: left; font-size: 1.5rem; }
 }
+
+.note-text {
+    color: #f97316;
+    font-size: 0.9em;
+}
