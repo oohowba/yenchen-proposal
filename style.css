@@ -533,3 +533,13 @@ footer {
     color: #f97316;
     font-size: 0.9em;
 }
+
+.interview-q {
+    margin-top: 8px;
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: #94a3b8;
+}
+.interview-q li {
+    margin-bottom: 4px;
+}
